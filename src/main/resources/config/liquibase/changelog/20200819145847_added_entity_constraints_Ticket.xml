@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
+    <!--
+        Added the constraints for entity Ticket.
+    -->
+    <changeSet id="20200819145847-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="assigned_to_id"
+                                 baseTableName="ticket"
+                                 constraintName="fk_ticket_assigned_to_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="reported_by_id"
+                                 baseTableName="ticket"
+                                 constraintName="fk_ticket_reported_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+    </changeSet>
+</databaseChangeLog>
