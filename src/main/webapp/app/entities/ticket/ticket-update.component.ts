@@ -9,7 +9,7 @@ import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
 import UserService from '@/admin/user-management/user-management.service';
 
 import AlertService from '@/shared/alert/alert.service';
-import { ITicket, Ticket } from '@/shared/model/ticket.model';
+import { ITicket, Ticket, Priority } from '@/shared/model/ticket.model';
 import TicketService from './ticket.service';
 
 const validations: any = {
@@ -57,6 +57,7 @@ export default class TicketUpdate extends Vue {
         this.currentLanguage = this.$store.getters.currentLanguage;
       }
     );
+    this.ticket.priority = Priority.HIGH;
   }
 
   public save(): void {
